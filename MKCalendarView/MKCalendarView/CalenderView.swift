@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalenderView: UIView {
+public class CalenderView: UIView {
 
 	// MARK: - Properties
 	// - Constants
@@ -121,17 +121,17 @@ extension CalenderView {
 // MARK: - CollectionView delegate / data source
 extension CalenderView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	// Number of cells
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+	public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return model.cellsInMonth()
 	}
 	
 	// Configure cell
-	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+	public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		return model.configureCell(collectionView, indexPath)
 	}
 	
 	// Select cell
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+	public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		print("asfdafad")
 		let cell = collectionView.cellForItem(at: indexPath) as! DateCell
 		print("cell: \(cell)")
@@ -150,7 +150,7 @@ extension CalenderView: UICollectionViewDataSource, UICollectionViewDelegateFlow
 	}
 	
 	// Cell size
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+	public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		let size = collectionView.frame.width / 7
 		return CGSize(width: size, height: size)
 	}
